@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class=" jumbotron text-center ">
+    <h3>Yazılım bloğuna hoş geldiniz.</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti amet voluptas iusto velit tenetur vitae
+        repudiandae omnis architecto iste recusandae saepe in impedit repellendus dicta aut doloribus perspiciatis
+        aliquid minima rerum, ea cumque dolor ad! Debitis ex harum fuga cum porro facere ad inventore obcaecati quisquam
+        iusto quia voluptates mollitia totam, culpa temporibus ipsum, sequi quos repudiandae suscipit dolores sunt,
+        blanditiis voluptatem sapiente deleniti. Veritatis optio nulla, sapiente dolor dolorem ex expedita modi illo
+        vero distinctio aperiam nobis harum atque quaerat corporis nisi, nam ipsum consequatur facilis amet, repudiandae
+        molestisas voluptas accusantium. Cum quia tenetur, quidem dolores sequi nemo ipsa? </p>
+    <p>
+
+        <ul>
+            {% for number in numbers %}
+            <li>{{number}}</li>
+            {% endfor %}
+    </p>
+    </ul>
+</div>
+<p>
+    {% if request.user.is_authenticated %}
+    {{request.user.username}}, tarafından giriş yapılmış,
+    {% else %}
+    Giriş yapılmamış...
+    {% endif %}
+</p>
+{% endblock body %}
